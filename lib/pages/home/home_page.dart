@@ -1,19 +1,20 @@
-import 'package:cinerama/core/app_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class HomePage extends StatefulWidget {
+import '../../core/app_colors.dart';
+import 'home_controller.dart';
+
+class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('${AppConstants.apiKey}'),
+      backgroundColor: AppColors.mainBackground,
+      appBar: AppBar(
+        title: Text('Cinemania'.toUpperCase()),
+        backgroundColor: AppColors.mainBackground,
+        elevation: 0,
       ),
     );
   }
