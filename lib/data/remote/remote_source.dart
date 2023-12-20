@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:dio/dio.dart' as dio;
+import 'package:flutter/material.dart';
 
-import '../network/http_service.dart';
-import 'response_handler.dart';
-import '../models/movies_response.dart';
 import 'server_error.dart';
+import 'response_handler.dart';
+import '../network/http_service.dart';
+import '../models/movies_response.dart';
 
 class RemoteSource {
   RemoteSource();

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
 import '../../data/models/movies_response.dart';
 import '../../data/repository/home_repository.dart';
@@ -25,4 +25,6 @@ class HomeController extends GetxController {
       debugPrint('===================> error: $result');
     }
   }
+
+  List<Movie> get upcomingMovies => _upcomingMovies;
 }

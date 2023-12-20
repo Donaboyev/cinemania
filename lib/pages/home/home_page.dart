@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 
-import '../../core/app_colors.dart';
 import 'home_controller.dart';
+import '../../core/app_colors.dart';
 
-class HomePage extends GetView<HomeController> {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
@@ -16,6 +17,20 @@ class HomePage extends GetView<HomeController> {
         backgroundColor: AppColors.mainBackground,
         elevation: 0,
       ),
+      body: GetBuilder<HomeController>(builder: (controller) {
+        return Column(
+          children: [
+            CarouselSlider(
+              items: controller.upcomingMovies.map(
+                (movie) {
+                  return Text('${movie.title}');
+                },
+              ).toList(),
+              options: CarouselOptions(),
+            ),
+          ],
+        );
+      }),
     );
   }
 }
